@@ -1,0 +1,27 @@
+{
+  "name": "awesome-amplitude",
+  "version": "0.0.1",
+  "description": "Pluggable module for using Amplitude analytics",
+  "main": "dist/awesome-amplitude.js",
+  "scripts": {
+    "test": "standard",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kucherenkovova/awesome-amplitude.git"
+  },
+  "keywords": [],
+  "author": "volodymyr.kucherenko@do-it.co",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kucherenkovova/awesome-amplitude/issues"
+  },
+  "homepage": "https://github.com/kucherenkovova/awesome-amplitude",
+  "dependencies": {
+    "amplitude-js": "git+https://github.com/kucherenkovova/Amplitude-Javascript.git"
+  },
+  "devDependencies": {
+    "standard": "^3.0.0"
+  }
+}
