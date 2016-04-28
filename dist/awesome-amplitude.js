@@ -45,21 +45,25 @@ module.exports =
 /* 0 */
 /***/ function(module, exports) {
 
-	module.exports = function () {
+	'use strict';
+	
+	module.exports = (function () {
 	  'use strict';
 	
-	  let service = {};
-	  let dataAttribute = '';
+	  var service = {};
+	  var dataAttribute = '';
 	
-	  service.init = function (APIkey, dataAttr = 'data-analytics-event') {
+	  service.init = function (APIkey) {
+	    var dataAttr = arguments.length <= 1 || arguments[1] === undefined ? 'data-analytics-event' : arguments[1];
+	
 	    amplitude.init(APIkey);
 	    dataAttribute = dataAttr;
 	  };
 	
 	  service.parse = function () {
-	    let elemsToObserve = document.querySelectorAll(`[${ dataAttribute }]`);[].forEach.call(elemsToObserve, elem => {
-	      elem.addEventListener('click', e => {
-	        let event = e.srcElement.getAttribute(dataAttribute);
+	    var elemsToObserve = document.querySelectorAll('[' + dataAttribute + ']');[].forEach.call(elemsToObserve, function (elem) {
+	      elem.addEventListener('click', function (e) {
+	        var event = e.srcElement.getAttribute(dataAttribute);
 	        amplitude.logEvent(event);
 	      });
 	    });
@@ -70,7 +74,7 @@ module.exports =
 	  };
 	
 	  return service;
-	}();
+	})();
 
 /***/ }
 /******/ ]);

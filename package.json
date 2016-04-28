@@ -22,6 +22,9 @@
     "amplitude-js": "git+https://github.com/kucherenkovova/Amplitude-Javascript.git"
   },
   "devDependencies": {
-    "standard": "^3.0.0"
+    "babel": "^6.5.2",
+    "babel-loader": "^6.2.4",
+    "standard": "^3.0.0",
+    "webpack": "^1.13.0"
   }
 }
